@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Location Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            border-left: 5px solid #007bff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            color: #495057;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .requirements {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .requirements h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .requirements ul {
+            margin-left: 20px;
+            color: #856404;
+        }
+        
+        .requirements li {
+            margin-bottom: 5px;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Facility Location Dashboard</h1>
+            <p>Interactive mapping tool for facility data visualization</p>
+        </div>
+        
+        <div class="content">
+            <div class="instructions">
+                <h2>📍 How to Generate Your Map</h2>
+                <ol>
+                    <li><strong>Prepare your data:</strong> Ensure your <code>facilities.csv</code> file is in the same directory as <code>create_map.py</code></li>
+                    <li><strong>Run the Python script:</strong> Execute the following command in your terminal:</li>
+                    <div class="code-block">python create_map.py</div>
+                    <li><strong>View your map:</strong> Once the script completes successfully, click the button below to view your interactive map</li>
+                </ol>
+            </div>
+            
+            <div class="button-container">
+                <a href="location_map.html" class="btn" id="mapButton">🗺️ View Interactive Map</a>
+            </div>
+            
+            <div class="requirements">
+                <h3>📋 Requirements</h3>
+                <ul>
+                    <li><strong>CSV File:</strong> facilities.csv with latitude/longitude columns</li>
+                    <li><strong>Python Libraries:</strong> pandas, plotly</li>
+                    <li><strong>Supported Column Names:</strong>
+                        <ul>
+                            <li>Latitude: latitude, lat, Latitude, LAT, y, Y</li>
+                            <li>Longitude: longitude, lon, lng, Longitude, LON, LONGITUDE, x, X</li>
+                            <li>Site Name: site_name, name, facility_name, site, Site, Name, facility</li>
+                            <li>Address: address, Address, full_address, location, street_address</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🚀 Run <strong>create_map.py</strong> to generate your interactive facility map</p>
+        </div>
+    </div>
+    
+    <script>
+        // Check if location_map.html exists and update button accordingly
+        document.getElementById('mapButton').addEventListener('click', function(e) {
+            // This will naturally show a 404 if the file doesn't exist
+            // which tells the user they need to run the Python script first
+        });
+    </script>
+</body>
+</html>
